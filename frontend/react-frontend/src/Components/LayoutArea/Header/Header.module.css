@@ -1,0 +1,16 @@
+@font-face {
+    font-family: logoFont;
+    src: url(../../../Assets/fonts/mainstay/Mainstay.ttf);
+}
+
+
+.Header {
+    font-family: logoFont;
+    font-size: 3.6rem;
+    color: rgb(255, 136, 57);
+    margin: 0 auto;
+    position: fixed;
+    top: 5%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+}

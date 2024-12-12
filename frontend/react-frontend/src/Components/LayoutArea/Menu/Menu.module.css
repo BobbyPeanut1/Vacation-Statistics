@@ -1,0 +1,19 @@
+.Menu {
+	display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 2em;
+    padding-left: 2em;
+}
+
+.Menu > a {
+    color: white;
+    text-decoration: none;
+    font-size: xx-large;
+    transition: 400ms ease-in-out;
+}
+
+.Menu > a:hover{
+    transform: scale(1.2);
+    color: blue;
+}

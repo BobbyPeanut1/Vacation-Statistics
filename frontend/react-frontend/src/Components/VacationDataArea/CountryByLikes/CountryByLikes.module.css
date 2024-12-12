@@ -1,0 +1,28 @@
+.CountryByLikes {
+    width: 32vw;
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+    margin-bottom: 2em;
+    border-radius: 20px;
+    white-space: initial;
+    font-weight: bold;
+    background-color: white;
+    animation: fadeInAnimation ease 500ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.CountryByLikes > div{
+    width: 16vw;;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

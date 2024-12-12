@@ -1,0 +1,19 @@
+
+
+.ShowVacationData{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2em;
+    gap: 5vw;
+    padding-top: 5vh;
+}
+
+.VacationSwitches{
+    display: flex;
+    justify-content: center;
+    padding-top: 5vh;
+}
+
+.VacationSwitches > .customBackgroundColor{
+    background-color: rgb(38, 38, 38);
+}

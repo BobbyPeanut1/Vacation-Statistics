@@ -1,0 +1,20 @@
+.PageNotFound {
+    width: 100%;
+    height: 100%;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.errText{
+    font-weight: bold;
+}
+
+.btnPriority .customButton{
+    background-color: black;
+}
+.customButton > a{
+    color: white;
+    text-decoration: none;
+
+}

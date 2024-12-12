@@ -1,0 +1,39 @@
+.loginFormWrapper {
+    font-size: 1.2em;
+    font-weight: 700; color:#202020;
+    word-spacing: 1px;
+    padding-top: 22vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.backgroundApply{
+    width: 30vw;
+    background-color: white;
+    padding: 2em;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+
+.formHeader{
+    padding-bottom: 2vh;
+}
+
+.emailInputSize{
+    padding-top: 0.1em;
+    font-size: 0.8em;
+}
+
+.passwordInputSize{
+    font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.emailMove{
+    padding-top: 3em;
+}

@@ -1,0 +1,5 @@
+/* make sure are pages cover the whole area */
+.Router{
+    width: 100%;
+    height: 100%;
+}

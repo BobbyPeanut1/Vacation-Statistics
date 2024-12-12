@@ -1,0 +1,8 @@
+.TotalUsers {
+    background-color: white;
+    width: 25vw;
+    height: 30vh;
+    border-radius: 20px;
+    white-space: initial;
+    font-weight: bold;
+}

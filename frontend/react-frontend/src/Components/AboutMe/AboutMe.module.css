@@ -1,0 +1,12 @@
+.AboutMe {
+    width: 100%;
+    height: auto;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5vh;
+}
+
+.moveCard{
+    margin-top: 5vh;
+}

@@ -1,0 +1,51 @@
+
+.Home {
+    height: 120%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.TitleDesign{
+    margin-top: 3vh;
+    width: 40vw;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700; color:#202020;
+    text-transform: uppercase;
+    word-spacing: 1px; letter-spacing:2px;
+    border: 1px solid black;
+    background-color: #dfdfdf;
+}
+
+.Home > .customCardColor{
+    background-color: rgb(255, 235, 230);
+}
+
+.SpanDesign span{ 
+    text-transform: none;
+    font-size:.75em;
+    font-weight: normal;
+    font-style: italic; font-family: "Playfair Display","Bookman",serif;
+    color:#999;
+    letter-spacing:-0.005em;
+    word-spacing:1px;
+    letter-spacing:none;
+}
+
+.SpanDesign{
+    margin-bottom: 0.5vh;
+}
+
+.Text{
+    text-align: left;
+    padding-left: 1vw;
+}
+
+.Text a{
+    font-size: inherit;
+    text-decoration: none;
+}
+
+
+

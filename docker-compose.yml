@@ -1,0 +1,98 @@
+# All containers needed: 
+services: 
+
+  # MySQL service: 
+  database-service:
+
+    # Image name to create from Dockerfile:
+    image: bobbypeanut/vacations-database-image:1.0
+
+    # Where is the location of the Dockerfile:
+    build: ./database
+
+    # Container name to create: 
+    container_name: vacations-database-container
+
+    # Named-vo~lume for MySQL folder:
+    volumes:
+      - vacations-volume:/var/lib/mysql
+
+    # Environment variables needed by MySQL for creating the database:
+    environment:
+      MYSQL_HOST: localhost # Where is the database host we're building --> Internally inside the container.
+      MYSQL_USER: Zamanski # Inventing a database user.
+      MYSQL_PASSWORD: Jonathan516=me # Inventing a database password.
+      MYSQL_DATABASE: third_project_db # What is the database name.
+      MYSQL_ROOT_PASSWORD: Jonathan516=me # Additional passwrod needed internaly by MySQL
+
+    # What to do if the container crashes: 
+    restart: unless-stopped # Restart when crashes, unless we stopped it.
+
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 5s
+      retries: 160
+
+# ------------------------------------------------------------------------------------------
+
+  # Django service (application): 
+  django-service:
+
+    # On which service we're depending on - for running and shutting-down order:
+    depends_on:
+      database-service:
+        condition: service_healthy
+
+    # Image name to create from Dockerfile:
+    image: bobbypeanut/vacations-django-image:1.0
+
+    # Where is the location of the Dockerfile:
+    build: ./backend
+
+    # Container name to create: 
+    container_name: vacations-django-container
+
+    # Environment variables needed by our backend project for connecting to MySQL located in another container!
+    environment:
+      MYSQL_HOST: database-service # Where is the database host we're connecting to relative to docker network. the service name is the computer name on the network.
+      MYSQL_USER: Zamanski # Inventing a database user.
+      MYSQL_PASSWORD: Jonathan516=me # Inventing a database password.
+      MYSQL_DATABASE: third_project_db # What is the database name.
+
+    # What to do if the container crashes: 
+    restart: unless-stopped # Restart when crashes, unless we stopped it.
+
+    # Port mapping (host:container)
+    ports:
+      - 8000:8000
+
+# ------------------------------------------------------------------------------------------
+
+  # React service:
+  react-service: 
+
+    # On which service we're depending on - for running and shutting-down order:
+    depends_on:
+      - django-service
+
+    # Image name to create from Dockerfile:
+    image: bobbypeanut/vacations-react-image:1.0
+
+    # Where is the location of the Dockerfile:
+    build: ./frontend/react-frontend
+
+    # Container name to create: 
+    container_name: vacations-react-container
+
+    # What to do if the container crashes: 
+    restart: unless-stopped # Restart when crashes, unless we stopped it.
+
+    # Port mapping (host:container)
+    ports:
+      - 3000:3000
+
+# ------------------------------------------------------------------------------------------
+
+# List all the named-volumes: 
+volumes:
+  vacations-volume:
